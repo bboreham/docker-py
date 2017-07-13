@@ -118,7 +118,7 @@ class CreateContainerTest(helpers.BaseTestCase):
             self.client.remove_container(id)
         err = exc.exception.response.text
         self.assertIn(
-            'You cannot remove a running container', err
+            'You cannot remove a', err
         )
         self.client.remove_container(id, force=True)
 
