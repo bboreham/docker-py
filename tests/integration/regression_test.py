@@ -15,7 +15,7 @@ class TestRegressions(helpers.BaseTestCase):
         with self.assertRaises(docker.errors.APIError) as exc:
             for line in self.client.build(fileobj=dfile, tag="a/b/c"):
                 pass
-        self.assertEqual(exc.exception.response.status_code, 500)
+        self.assertEqual(exc.exception.response.status_code, 400)
         dfile.close()
 
     def test_542_truncate_ids_client_side(self):
